@@ -5,6 +5,8 @@ public class Ceasar {
         this.key = k;
     }
 
+    String encrypt (String plaintext){
 
+    }
 
 }
