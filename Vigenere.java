@@ -12,7 +12,10 @@ public class Vigenere {
             ciphers[i] = new Ceasar(keyArr[i]);
         }
         String[] texts = splitText(plaintext);
-        String[] cypherTexts;
+        String[] cypherTexts = new String[key.length()];
+        for (int i = 0; i < key.length() ; i++) {
+            cypherTexts[i] = ciphers[i].encrypt(texts[i]);
+        }
 
     }
 
@@ -25,6 +28,10 @@ public class Vigenere {
             i= (i+1) % key.length();
         }
         return texts;
+    }
+
+    String combineTexts(String[] texts){
+
     }
 
 }
