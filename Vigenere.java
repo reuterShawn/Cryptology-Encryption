@@ -16,6 +16,7 @@ public class Vigenere {
         for (int i = 0; i < key.length() ; i++) {
             cypherTexts[i] = ciphers[i].encrypt(texts[i]);
         }
+        return combineTexts(cypherTexts);
 
     }
 
