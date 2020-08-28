@@ -4,8 +4,8 @@ public class encrypt {
     public String takeStuff ( String text, String keyword){
 
        String  filteredText = filterText(text);
-       int size = keyword.length();
-       int[] keywordSize = new int[size];
+       int[] keyArr = takeString(keyword);
+
     }
 
     public int[] takeString ( String word){
