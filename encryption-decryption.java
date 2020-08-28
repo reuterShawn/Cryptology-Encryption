@@ -18,9 +18,10 @@ public class encrypt {
     public int takeLetter ( String letter){
 
         String alphabet = "ABCDEFGHJIKLMNOPQRSTUVWXYZ";
-        int index = alphabet.indexOf(alphabet);
+        int index = alphabet.indexOf(letter);
         return index;
     }
+
     public static String filterText (String text){
         text = text.toUpperCase();
         String allLetters = text.replaceAll("[^A-Z]", " ");
