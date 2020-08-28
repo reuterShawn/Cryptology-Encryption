@@ -8,7 +8,11 @@ public class Vigenere {
 
     String encrypt(String plaintext){
         Ceasar[] ciphers = new Ceasar[key.length()];
+        for (int i = 0; i < key.length(); i++) {
+            ciphers[i] = new Ceasar(keyArr[i]);
+        }
         String[] texts = splitText(plaintext);
+        String[] cypherTexts;
 
     }
 
