@@ -10,11 +10,14 @@ public class encrypt {
 
     public int[] takeString ( String word){
         int wordSize =word.length();
+        int[] keyArr = new int[wordSize];
         for (int i = 0; i < wordSize ; i++ ) {
             String letter = word.substring(i, i+1);
-            takeLetter(letter);
+            keyArr[i] = takeLetter(letter);
         }
+        return keyArr;
     }
+
     public int takeLetter ( String letter){
 
         String alphabet = "ABCDEFGHJIKLMNOPQRSTUVWXYZ";
