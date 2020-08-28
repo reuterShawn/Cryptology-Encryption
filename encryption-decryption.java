@@ -1,4 +1,4 @@
-public class encrpt {
+public class encrypt {
 
 
     public String takeStuff ( String text, String keyword){
