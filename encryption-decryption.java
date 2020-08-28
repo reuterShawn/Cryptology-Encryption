@@ -10,7 +10,7 @@ public class encrypt {
 
     public int[] takeString ( String word){
         int wordSize =word.length();
-        for (int i = 0; i < wordSize ; i++; ) {
+        for (int i = 0; i < wordSize ; i++ ) {
             String letter = word.substring(i, i+1);
             takeLetter(letter);
         }
