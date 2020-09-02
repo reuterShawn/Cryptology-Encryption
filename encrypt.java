@@ -69,9 +69,16 @@ public class encrypt {
         //System.out.println(doNothing(text, key));
         //System.out.println(takeStuff(text2,key));
         //System.out.println(doNothing(text2,key));
+        //String cyphertextJoeAarron = "kkmqqgzyacuataaviefwwsodavessdfjadddhmqxsenfizastpjleeilkoxxfphqhzadewwsaeagkkucygizsgbdgbtsifwzarrxfcedpfzhqglduyqajtttkdabtgbazagjhqgxkrqwwwditdhtttqaadhkpadiukmucywnpizaypdfpsfdhyoyxfcfqslktttjqlqhsjduwaptttynogcvnuzcajgpxvjtypcasqckanailklukwbodumjyajjxrmxfcefhkiaditqtkdmnhqpvcefhvqmnhgiuowlkdahgiuowlksqtkkwtplowddfcwuizpawxfcttttwcwhlneqikuogadjehtjgnalabyajvknfvguogadjehtjohucwefkdmzoziyhoiwwunalqkudtsjaxakpadvwpyajjcaytgjgaedwyttqjoingqrqpjkcwhlwrstlphqhzkwacyatbpazazsshlfwspgxxlpedhaogaavknxnkdoaiajgeisnsngwwkfwwioxsapsmrgklbasyemcvphqnkwyuiyaterghdqgqkudttqnpawzubcgswmxlpixngqgqighdqgtqtfwwieftgnmqctagfdvefrtjfupvajgnnldetddaizizasmiwhluiwlioimnefwwecqlwokmiwesstlpizvhnefiqphucldeiplarevwptucysadbkkyajeegtisowqadowubeuwagdzsacxerqwgsbajluoggkphmikphqlsuixxcaifpfzixafavqgyatndjadttqjoingqrqpfwlxhlwrstluoggywmqdfcobasuhqnfkwkdmnemggykeisngqildeewgsozvwppmxvwlxizwtsaaptqgkessddzozaqohadlenshlwreqjaawizamaavooyttkdkdfyemhcadodmhduhhwrqhgieowsjgqugngmhajeqslkgqieusqaxwwmnxnoyizesbasyeuhsedkthshmisyozrwlturgqlpjkaaxxlplqumalynkalrpfzwqrgqlppdhuetshifidactpfceitdhtttqaadhkpadiukmucywnpizaypdfpsfdhyoyxfcfqslktttjqlqhsjduwaptttynogcvnuzcajgpxvjtypcasqckanailklukwbodumjyajjxrmxfcefhkiaditqtkdmnhqpvcefhvqmnhgiuowlkdahgiuowlksqtkkwtplowddfcwuizpawxfcttttwcwhlneqikuogadjehtjgnalabyajvknfvgcokdmhlztnarewajeuuqkupdfpgxdodekcgsyajjaazpdhsfpjcefngqrspeaozvgllmnzayzdouoggwwrarcotmgyatfwwohalgjgqihwippfzaxaldafvdetftjoievghdacdustdgpizvkpadhtnemzldeyddzhqnfkwttqjoiwwuhqnzayzdodekcgshqnfkwkdmnemcshleisnhqnfkwkdmnemcshleisnhqnfkwkdmnemcshleisnozaqohadlenshlwreqjaawizamaav";
         String cyphertextJoeAarron = "kkmqqgzyacuataaviefwwsodavessdfjadddhmqxsenfizastpjleeilkoxxfphqhzadewwsaeagkkucygizsgbdgbtsifwzarrxfcedpfzhqglduyqajtttkdabtgbazagjhqgxkrqwwwditdhtttqaadhkpadiukmucywnpizaypdfpsfdhyoyxfcfqslktttjqlqhsjduwaptttynogcvnuzcajgpxvjtypcasqckanailklukwbodumjyajjxrmxfcefhkiaditqtkdmnhqpvcefhvqmnhgiuowlkdahgiuowlksqtkkwtplowddfcwuizpawxfcttttwcwhlneqikuogadjehtjgnalabyajvknfvguogadjehtjohucwefkdmzoziyhoiwwunalqkudtsjaxakpadvwpyajjcaytgjgaedwyttqjoingqrqpjkcwhlwrstlphqhzkwacyatbpazazsshlfwspgxxlpedhaogaavknxnkdoaiajgeisnsngwwkfwwioxsapsmrgklbasyemcvphqnkwyuiyaterghdqgqkudttqnpawzubcgswmxlpixngqgqighdqgtqtfwwieftgnmqctagfdvefrtjfupvajgnnldetddaizizasmiwhluiwlioimnefwwecqlwokmiwesstlpizvhnefiqphucldeiplarevwptucysadbkkyajeegtisowqadowubeuwagdzsacxerqwgsbajluoggkphmikphqlsuixxcaifpfzixafavqgyatndjadttqjoingqrqpfwlxhlwrstluoggywmqdfcobasuhqnfkwkdmnemggykeisngqildeewgsozvwppmxvwlxizwtsaaptqgkessddzozaqohadlenshlwreqjaawizamaavooyttkdkdfyemhcadodmhduhhwrqhgieowsjgqugngmhajeqslkgqieusqaxwwmnxnoyizesbasyeuhsedkthshmisyozrwlturgqlpjkaaxxlplqumalynkalrpfzwqrgqlppdhuetshifidactpfceitdhtttqaadhkpadiukmucywnpizaypdfpsfdhyoyxfcfqslktttjqlqhsjduwaptttynogcvnuzcajgpxvjtypcasqckanailklukwbodumjyajjxrmxfcefhkiaditqtkdmnhqpvcefhvqmnhgiuowlkdahgiuowlksqtkkwtplowddfcwuizpawxfcttttwcwhlneqikuogadjehtjgnalabyajvknfvgcokdmhlztnarewajeuuqkupdfpgxdodekcgsyajjaazpdhsfpjcefngqrspeaozvgllmnzayzdouoggwwrarcotmgyatfwwohalgjgqihwippfzaxaldafvdetftjoievghdacdustdgpizvkpadhtnemzldeyddzhqnfkwttqjoiwwuhqnzayzdodekcgshqnfkwkdmnemcshleisnhqnfkwkdmnemcshleisnhqnfkwkdmnemcshleisnozaqohadlenshlwreqjaawizamaav";
-        System.out.println(Arrays.toString(splitText(cyphertextJoeAarron,5)));
-        System.out.println(Arrays.deepToString(thing(cyphertextJoeAarron,5)));
+        //System.out.println(Arrays.toString(splitText(cyphertextJoeAarron,5)));
+        //System.out.println(Arrays.deepToString(thing(cyphertextJoeAarron,5)));
+        //System.out.println(takeStuff("ATTACKATDAWN","LEMON"));
+        //System.out.println(doNothing("ATTACKATDAWN","LEMON"));
+        //System.out.println(takeStuff("CRYPTOISSHORTFORCRYPTOGRAPHY","ABCD"));
+        //System.out.println(doNothing("CRYPTOISSHORTFORCRYPTOGRAPHY","ABCD"));
+        System.out.println(keyElimination(cyphertextJoeAarron,5));
+        System.out.println(Arrays.deepToString(commonSelfEncrypts()));
     }
 
     public static String takeStuff ( String text, String keyword){
@@ -129,6 +136,34 @@ public class encrypt {
         }
         return ints;
     }
+    
+    static String keyElimination(String text, int keyLength){
+        String newText = text.substring(keyLength) + text.substring(0,keyLength);
+        int[] text1 = Ceasar.toIntArr(text);
+        int[] newText1 = Ceasar.toIntArr(newText);
+        for (int i = 0; i < text.length(); i++) {
+            text1[i] = (text1[i] - newText1[i] + 26) % 26;
+        }
+        return Ceasar.toString(text1);
+    }
+
+    static String selfEncrypt(String text){
+        int[] text1 = Ceasar.toIntArr(text);
+        for (int i = 0; i < text.length(); i++) {
+            text1[i] = (text1[i] + text1[i] + 26) % 26;
+        }
+        return Ceasar.toString(text1);
+    }
+
+    static String[] commonEnglishWords = {"the","of","to","and","in","you","they","have","this"};
+    static String[] commonSelfEncrypts(){
+        String[] strings = new String[commonEnglishWords.length];
+        for (int i = 0; i < commonEnglishWords.length; i++) {
+            strings[i]=selfEncrypt(commonEnglishWords[i]);
+        }
+        return strings;
+    }
+
 
 
 }

@@ -23,7 +23,7 @@ public class Ceasar {
         return toString(ints);
     }
 
-    int[] toIntArr (String text){
+    static int[] toIntArr (String text){
         int[] ints = new int[text.length()];
         for (int i = 0; i < text.length(); i++) {
             ints[i] = encrypt.letterIndex(text.substring(i,i+1));
@@ -31,7 +31,7 @@ public class Ceasar {
         return ints;
     }
 
-    String toString (int[] ints){
+    static String toString (int[] ints){
         String string = "";
         for (int i = 0; i < ints.length; i++) {
             string += "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toLowerCase().substring(ints[i],ints[i]+1);
