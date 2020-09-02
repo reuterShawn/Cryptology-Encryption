@@ -34,7 +34,7 @@ public class Ceasar {
     String toString (int[] ints){
         String string = "";
         for (int i = 0; i < ints.length; i++) {
-            string += "ABCDEFGHJIKLMNOPQRSTUVWXYZ".toLowerCase().substring(ints[i],ints[i]+1);
+            string += "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toLowerCase().substring(ints[i],ints[i]+1);
         }
         return string;
     }
