@@ -88,7 +88,7 @@ public class encrypt {
 
     public static int letterIndex(String letter){
 
-        String alphabet = "ABCDEFGHJIKLMNOPQRSTUVWXYZ".toLowerCase();
+        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toLowerCase();
         int index = alphabet.indexOf(letter);
         return index;
     }
