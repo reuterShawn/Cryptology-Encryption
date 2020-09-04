@@ -70,15 +70,23 @@ public class encrypt {
         //System.out.println(takeStuff(text2,key));
         //System.out.println(doNothing(text2,key));
         //String cyphertextJoeAarron = "kkmqqgzyacuataaviefwwsodavessdfjadddhmqxsenfizastpjleeilkoxxfphqhzadewwsaeagkkucygizsgbdgbtsifwzarrxfcedpfzhqglduyqajtttkdabtgbazagjhqgxkrqwwwditdhtttqaadhkpadiukmucywnpizaypdfpsfdhyoyxfcfqslktttjqlqhsjduwaptttynogcvnuzcajgpxvjtypcasqckanailklukwbodumjyajjxrmxfcefhkiaditqtkdmnhqpvcefhvqmnhgiuowlkdahgiuowlksqtkkwtplowddfcwuizpawxfcttttwcwhlneqikuogadjehtjgnalabyajvknfvguogadjehtjohucwefkdmzoziyhoiwwunalqkudtsjaxakpadvwpyajjcaytgjgaedwyttqjoingqrqpjkcwhlwrstlphqhzkwacyatbpazazsshlfwspgxxlpedhaogaavknxnkdoaiajgeisnsngwwkfwwioxsapsmrgklbasyemcvphqnkwyuiyaterghdqgqkudttqnpawzubcgswmxlpixngqgqighdqgtqtfwwieftgnmqctagfdvefrtjfupvajgnnldetddaizizasmiwhluiwlioimnefwwecqlwokmiwesstlpizvhnefiqphucldeiplarevwptucysadbkkyajeegtisowqadowubeuwagdzsacxerqwgsbajluoggkphmikphqlsuixxcaifpfzixafavqgyatndjadttqjoingqrqpfwlxhlwrstluoggywmqdfcobasuhqnfkwkdmnemggykeisngqildeewgsozvwppmxvwlxizwtsaaptqgkessddzozaqohadlenshlwreqjaawizamaavooyttkdkdfyemhcadodmhduhhwrqhgieowsjgqugngmhajeqslkgqieusqaxwwmnxnoyizesbasyeuhsedkthshmisyozrwlturgqlpjkaaxxlplqumalynkalrpfzwqrgqlppdhuetshifidactpfceitdhtttqaadhkpadiukmucywnpizaypdfpsfdhyoyxfcfqslktttjqlqhsjduwaptttynogcvnuzcajgpxvjtypcasqckanailklukwbodumjyajjxrmxfcefhkiaditqtkdmnhqpvcefhvqmnhgiuowlkdahgiuowlksqtkkwtplowddfcwuizpawxfcttttwcwhlneqikuogadjehtjgnalabyajvknfvgcokdmhlztnarewajeuuqkupdfpgxdodekcgsyajjaazpdhsfpjcefngqrspeaozvgllmnzayzdouoggwwrarcotmgyatfwwohalgjgqihwippfzaxaldafvdetftjoievghdacdustdgpizvkpadhtnemzldeyddzhqnfkwttqjoiwwuhqnzayzdodekcgshqnfkwkdmnemcshleisnhqnfkwkdmnemcshleisnhqnfkwkdmnemcshleisnozaqohadlenshlwreqjaawizamaav";
-        String cyphertextJoeAarron = "kkmqqgzyacuataaviefwwsodavessdfjadddhmqxsenfizastpjleeilkoxxfphqhzadewwsaeagkkucygizsgbdgbtsifwzarrxfcedpfzhqglduyqajtttkdabtgbazagjhqgxkrqwwwditdhtttqaadhkpadiukmucywnpizaypdfpsfdhyoyxfcfqslktttjqlqhsjduwaptttynogcvnuzcajgpxvjtypcasqckanailklukwbodumjyajjxrmxfcefhkiaditqtkdmnhqpvcefhvqmnhgiuowlkdahgiuowlksqtkkwtplowddfcwuizpawxfcttttwcwhlneqikuogadjehtjgnalabyajvknfvguogadjehtjohucwefkdmzoziyhoiwwunalqkudtsjaxakpadvwpyajjcaytgjgaedwyttqjoingqrqpjkcwhlwrstlphqhzkwacyatbpazazsshlfwspgxxlpedhaogaavknxnkdoaiajgeisnsngwwkfwwioxsapsmrgklbasyemcvphqnkwyuiyaterghdqgqkudttqnpawzubcgswmxlpixngqgqighdqgtqtfwwieftgnmqctagfdvefrtjfupvajgnnldetddaizizasmiwhluiwlioimnefwwecqlwokmiwesstlpizvhnefiqphucldeiplarevwptucysadbkkyajeegtisowqadowubeuwagdzsacxerqwgsbajluoggkphmikphqlsuixxcaifpfzixafavqgyatndjadttqjoingqrqpfwlxhlwrstluoggywmqdfcobasuhqnfkwkdmnemggykeisngqildeewgsozvwppmxvwlxizwtsaaptqgkessddzozaqohadlenshlwreqjaawizamaavooyttkdkdfyemhcadodmhduhhwrqhgieowsjgqugngmhajeqslkgqieusqaxwwmnxnoyizesbasyeuhsedkthshmisyozrwlturgqlpjkaaxxlplqumalynkalrpfzwqrgqlppdhuetshifidactpfceitdhtttqaadhkpadiukmucywnpizaypdfpsfdhyoyxfcfqslktttjqlqhsjduwaptttynogcvnuzcajgpxvjtypcasqckanailklukwbodumjyajjxrmxfcefhkiaditqtkdmnhqpvcefhvqmnhgiuowlkdahgiuowlksqtkkwtplowddfcwuizpawxfcttttwcwhlneqikuogadjehtjgnalabyajvknfvgcokdmhlztnarewajeuuqkupdfpgxdodekcgsyajjaazpdhsfpjcefngqrspeaozvgllmnzayzdouoggwwrarcotmgyatfwwohalgjgqihwippfzaxaldafvdetftjoievghdacdustdgpizvkpadhtnemzldeyddzhqnfkwttqjoiwwuhqnzayzdodekcgshqnfkwkdmnemcshleisnhqnfkwkdmnemcshleisnhqnfkwkdmnemcshleisnozaqohadlenshlwreqjaawizamaav";
-        //System.out.println(Arrays.toString(splitText(cyphertextJoeAarron,5)));
+        String cyphertextAustinNicc = "qrbaisybxeirzgpxyqcgmwwwugmlmqielxvwiswkqdgbzxthlsmvxxhvwgivnnjemvbwclxlwrqgwxlrlhqhmgqvxuuaynmocggivrpvlxjrlgpxgrgzwghhzrvlislbuhxhnumziqyeieahfsikidhqaxgxlrbaiefralmqafwyplvrzmcwibckwhfimleqxbcktrmgmkmwsqwhvguvvtrgyfbtfocfpmllmpwgwwcgcmmrhswkxkyhvbxhxfbtxhmbntqhlvkteofymzmvfnbbzhjbexvvbrzxmqaeigxhxfptpovrdxwwyqqgefiaokivmbnmlhoaqmigmgimivquqvlvbntegrhfqlxrznaxrdnrighkihaxsilrxkivyabtxlpramlhbbclirzemivhmrvmewcimlwkuytuifizxhwhxbnfipvrzlgkifmgiyyeglifialridlogmlhjrwiphisbaivyimkeomgimivualmlhyymvxrlfqgidwuamewyfptpobndxxkydctplzvktxliaakitovabxhzbzxphwgwkwrzgpxqrmgvnqhlbclfuuakasinumlxdnrtxklmyimyuyawiiumbvlldfyjxeuyczxwhhgimmyyjphwkuytgswbndxewnnqgignbbaidarwyxzyabrjlprgxeumnvwfhyaaxzhhlmtvvupqmmcyawyxkyhvbxhxfbtxhmnvwakifptpohbbplhhrtxgwyqjxeqcaptflnnvmsinuimwwugmbrzbvkalhmuiepeypphwhh";
+        String[] splitText = splitText(cyphertextAustinNicc,6);
+        System.out.println(Arrays.toString(splitText));
         //System.out.println(Arrays.deepToString(thing(cyphertextJoeAarron,5)));
         //System.out.println(takeStuff("ATTACKATDAWN","LEMON"));
         //System.out.println(doNothing("ATTACKATDAWN","LEMON"));
         //System.out.println(takeStuff("CRYPTOISSHORTFORCRYPTOGRAPHY","ABCD"));
         //System.out.println(doNothing("CRYPTOISSHORTFORCRYPTOGRAPHY","ABCD"));
-        System.out.println(keyElimination(cyphertextJoeAarron,5));
+        //System.out.println(keyElimination(cyphertextJoeAarron,5));
+        //System.out.println(Arrays.toString(freq(splitText[0])));
+        //System.out.println(Arrays.toString(freq(splitText[1])));
+        //System.out.println(Arrays.toString(freq(splitText[2])));
+        //System.out.println(Arrays.toString(freq(splitText[3])));
+        //System.out.println(Arrays.toString(freq(splitText[4])));
+//        System.out.println((keyElimination(cyphertextAustinNicc, 5)));
         System.out.println(Arrays.deepToString(commonSelfEncrypts()));
+        System.out.println(decrypt(cyphertextAustinNicc, "united" ));
     }
 
     public static String takeStuff ( String text, String keyword){
@@ -88,6 +96,12 @@ public class encrypt {
        return cipher.encrypt(filteredText);
     }
 
+    public static String decrypt ( String text, String keyword){
+
+        String  filteredText = filterText(text);
+        Vigenere cipher = new Vigenere(filterText(keyword));
+        return cipher.decrypt(filteredText);
+    }
     public static String doNothing (String text, String keyword){
         Vigenere cipher = new Vigenere(filterText(keyword));
         return cipher.decrypt(cipher.encrypt(filterText(text)));
