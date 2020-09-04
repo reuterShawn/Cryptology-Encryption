@@ -1,4 +1,6 @@
-import java.util.Arrays;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
 
 public class encrypt {
 
@@ -71,14 +73,43 @@ public class encrypt {
         //System.out.println(doNothing(text2,key));
         //String cyphertextJoeAarron = "kkmqqgzyacuataaviefwwsodavessdfjadddhmqxsenfizastpjleeilkoxxfphqhzadewwsaeagkkucygizsgbdgbtsifwzarrxfcedpfzhqglduyqajtttkdabtgbazagjhqgxkrqwwwditdhtttqaadhkpadiukmucywnpizaypdfpsfdhyoyxfcfqslktttjqlqhsjduwaptttynogcvnuzcajgpxvjtypcasqckanailklukwbodumjyajjxrmxfcefhkiaditqtkdmnhqpvcefhvqmnhgiuowlkdahgiuowlksqtkkwtplowddfcwuizpawxfcttttwcwhlneqikuogadjehtjgnalabyajvknfvguogadjehtjohucwefkdmzoziyhoiwwunalqkudtsjaxakpadvwpyajjcaytgjgaedwyttqjoingqrqpjkcwhlwrstlphqhzkwacyatbpazazsshlfwspgxxlpedhaogaavknxnkdoaiajgeisnsngwwkfwwioxsapsmrgklbasyemcvphqnkwyuiyaterghdqgqkudttqnpawzubcgswmxlpixngqgqighdqgtqtfwwieftgnmqctagfdvefrtjfupvajgnnldetddaizizasmiwhluiwlioimnefwwecqlwokmiwesstlpizvhnefiqphucldeiplarevwptucysadbkkyajeegtisowqadowubeuwagdzsacxerqwgsbajluoggkphmikphqlsuixxcaifpfzixafavqgyatndjadttqjoingqrqpfwlxhlwrstluoggywmqdfcobasuhqnfkwkdmnemggykeisngqildeewgsozvwppmxvwlxizwtsaaptqgkessddzozaqohadlenshlwreqjaawizamaavooyttkdkdfyemhcadodmhduhhwrqhgieowsjgqugngmhajeqslkgqieusqaxwwmnxnoyizesbasyeuhsedkthshmisyozrwlturgqlpjkaaxxlplqumalynkalrpfzwqrgqlppdhuetshifidactpfceitdhtttqaadhkpadiukmucywnpizaypdfpsfdhyoyxfcfqslktttjqlqhsjduwaptttynogcvnuzcajgpxvjtypcasqckanailklukwbodumjyajjxrmxfcefhkiaditqtkdmnhqpvcefhvqmnhgiuowlkdahgiuowlksqtkkwtplowddfcwuizpawxfcttttwcwhlneqikuogadjehtjgnalabyajvknfvgcokdmhlztnarewajeuuqkupdfpgxdodekcgsyajjaazpdhsfpjcefngqrspeaozvgllmnzayzdouoggwwrarcotmgyatfwwohalgjgqihwippfzaxaldafvdetftjoievghdacdustdgpizvkpadhtnemzldeyddzhqnfkwttqjoiwwuhqnzayzdodekcgshqnfkwkdmnemcshleisnhqnfkwkdmnemcshleisnhqnfkwkdmnemcshleisnozaqohadlenshlwreqjaawizamaav";
         String cyphertextJoeAarron = "kkmqqgzyacuataaviefwwsodavessdfjadddhmqxsenfizastpjleeilkoxxfphqhzadewwsaeagkkucygizsgbdgbtsifwzarrxfcedpfzhqglduyqajtttkdabtgbazagjhqgxkrqwwwditdhtttqaadhkpadiukmucywnpizaypdfpsfdhyoyxfcfqslktttjqlqhsjduwaptttynogcvnuzcajgpxvjtypcasqckanailklukwbodumjyajjxrmxfcefhkiaditqtkdmnhqpvcefhvqmnhgiuowlkdahgiuowlksqtkkwtplowddfcwuizpawxfcttttwcwhlneqikuogadjehtjgnalabyajvknfvguogadjehtjohucwefkdmzoziyhoiwwunalqkudtsjaxakpadvwpyajjcaytgjgaedwyttqjoingqrqpjkcwhlwrstlphqhzkwacyatbpazazsshlfwspgxxlpedhaogaavknxnkdoaiajgeisnsngwwkfwwioxsapsmrgklbasyemcvphqnkwyuiyaterghdqgqkudttqnpawzubcgswmxlpixngqgqighdqgtqtfwwieftgnmqctagfdvefrtjfupvajgnnldetddaizizasmiwhluiwlioimnefwwecqlwokmiwesstlpizvhnefiqphucldeiplarevwptucysadbkkyajeegtisowqadowubeuwagdzsacxerqwgsbajluoggkphmikphqlsuixxcaifpfzixafavqgyatndjadttqjoingqrqpfwlxhlwrstluoggywmqdfcobasuhqnfkwkdmnemggykeisngqildeewgsozvwppmxvwlxizwtsaaptqgkessddzozaqohadlenshlwreqjaawizamaavooyttkdkdfyemhcadodmhduhhwrqhgieowsjgqugngmhajeqslkgqieusqaxwwmnxnoyizesbasyeuhsedkthshmisyozrwlturgqlpjkaaxxlplqumalynkalrpfzwqrgqlppdhuetshifidactpfceitdhtttqaadhkpadiukmucywnpizaypdfpsfdhyoyxfcfqslktttjqlqhsjduwaptttynogcvnuzcajgpxvjtypcasqckanailklukwbodumjyajjxrmxfcefhkiaditqtkdmnhqpvcefhvqmnhgiuowlkdahgiuowlksqtkkwtplowddfcwuizpawxfcttttwcwhlneqikuogadjehtjgnalabyajvknfvgcokdmhlztnarewajeuuqkupdfpgxdodekcgsyajjaazpdhsfpjcefngqrspeaozvgllmnzayzdouoggwwrarcotmgyatfwwohalgjgqihwippfzaxaldafvdetftjoievghdacdustdgpizvkpadhtnemzldeyddzhqnfkwttqjoiwwuhqnzayzdodekcgshqnfkwkdmnemcshleisnhqnfkwkdmnemcshleisnhqnfkwkdmnemcshleisnozaqohadlenshlwreqjaawizamaav";
-        //System.out.println(Arrays.toString(splitText(cyphertextJoeAarron,5)));
+        String cyphertextElena = "qjapkofclpgauficevhvujgebkgtdjhzctdssphzrvgnrbvvoccgueecjvolblkezgljejhmfyftspacmrknxwfhoiasvifbkaskseuiecjfeihgutlrqvhvvafdvbsupvqluowhzgspglgmjqjapkofclpgauijikgdkctterqzerpdlqgiohjitgweuiwlaspglgmjoffgrwfcctskutfhzgcfblgnkggheeqjapksvoejgsiejsngnztljetfqrtfujcpywumepwkwnbbgynzbsfdzhaqnkcectysectzqsnaeodaszgghcimhvoxfsrhzqsngffavhdgutyghspacmkkszbunuuskvhvglwdpcxuiusujaebwnakhsekjhzctucfqtkojiekkwckeskuejwfvhvqjapkcytagvaeacugtikveutyseuecjwublhapskssfeoddqikkwckeskuejwfvhvwjkmgzwoeehsvifb";
+        //System.out.println(cyphertextElena);
+        //System.out.println(Arrays.toString(splitText(cyphertextElena,5)));
+        String cyphertextKarsh = "eswwerfrwnwnziodieazxaiinnjfejcwaheihyqfblaqsiosbwxicyryiqvtrhljbsqggtmdaanfbxeiazoipjiorhfxizigzfxjfmocacezngvbkhicarqluvmrccgeozfscpyyanbvaqsjrqxyiyjrsphehbpooimbigvrqqhagvfracavamsimqozbcuftbkypqwslsipeqjyozooytyctfbukxmbpbieozxgaiwupieseiarvibfwjzbximpnybmjoxnzfxjfmooovovzrohjqmbvgoiqxgbcjmdapnbdsduarqlrtbmyzlfqlzloaeciiamlyrytvssijbqfwplqjxrbfrwcknbqmbfxvqhceocczlsacvtgeehjcfsqlumbnwowoicetxxxyzcofhwiwqalrusnbfqlemmfcovocurlzmjylusoiinpruoetoigstihydrfvthicqccceoabbxtulnrqqvujwehzehxiyzywlyzldoskxunwdsjubuwkkwiqaueihygbidsjfqahlroicetrdpiegvxxigmjosijicfkbpbvmvbosmvgrpxvhsqgcihoicfhltvfgvbdmdnprvlyiyprmxhqgprmyehlgvgqlqnnhnwkufiywqxbyacszmqflnmdvqxcnhfsdhmisoxxictvqmtgixsfxjbzrsaeomoeoaiiwpbcixxlmrrxcibqtvpgxiwyhesiyerfbemeenfaxxlmrrxciwwyzbkucutzxhynwbyxhqsiaremjwpuwhituzbikhjbmuwsioicqwagegmoozotcnssoidnpvpxvhsiehfiwlwjwkkqgcfhxgxytbchwwiwqvbehujbiqjhuvxwbcuuplcrkecvthlxxynhbbvqfvbwjrenobwkkupmemystssactwinqaupscywasvskxqrrlrjqifhbmjivngnyylzrzpysbiucqluulvuriimprqlybxpnjbnkmbtcqxuhwhhljjbmjovmbidrhemicvpcoteligwkkqhizipicyvgdxvacvgclyhxil";
+        //String[] elenaChunks = splitText(cyphertextElena,5);
+        //System.out.println(Arrays.toString(bruteForceCeaser(elenaChunks[0])));
+//        System.out.println(keyElimination(cyphertextElena,5));
+//        System.out.println(keyEliminationOffset(cyphertextElena,5,2));
+//        System.out.println(keyEliminationOffset(cyphertextElena,5,3));
+//        System.out.println(keyEliminationOffset(cyphertextElena,5,4));
+//        System.out.println(keyEliminationOffset(cyphertextElena,5,5));
+//        System.out.println(keyEliminationOffset(cyphertextElena,5,29));
+//        System.out.println(keyEliminationOffset(cyphertextElena,145));
         //System.out.println(Arrays.deepToString(thing(cyphertextJoeAarron,5)));
         //System.out.println(takeStuff("ATTACKATDAWN","LEMON"));
         //System.out.println(doNothing("ATTACKATDAWN","LEMON"));
         //System.out.println(takeStuff("CRYPTOISSHORTFORCRYPTOGRAPHY","ABCD"));
         //System.out.println(doNothing("CRYPTOISSHORTFORCRYPTOGRAPHY","ABCD"));
-        System.out.println(keyElimination(cyphertextJoeAarron,5));
-        System.out.println(Arrays.deepToString(commonSelfEncrypts()));
+        //System.out.println(keyElimination(cyphertextJoeAarron,5));
+        //System.out.println(Arrays.deepToString(commonSelfEncrypts()));
+
+
+//        ArrayList<textKeyPair> list = bruteForce(cyphertextKarsh,7);
+//        System.out.println(list.get(0).key);
+//        System.out.println(list.size());
+//        ArrayList list1 = filterThe(list);
+//        System.out.println(list1.size());
+//        System.out.println(list1.toString());
+        //System.out.println(new Vigenere("equinox").decrypt(cyphertextKarsh));
+
+        String cyphertextKJV = "agsbfddhbhsghacchsghlntdcyidhkgzrzdhqszpoecdqnkohdznsrjmmmvlwiehegammhnmchqbasccsfzyryxcpdnjrnxmprzabnkklhqglcitrqndtzrxlhffoildzccyfdckkgfedtdqwjtgcqcytmdymcqjmdzncwievpdkyoecwntpzmxqhrrzrbmtrgibqmsgcmfqmlsfzosfdqqdddrgdmohdprhbzwdjkhbjnsimnurhnrnkbtotrgzrhylylzuzlkqgddpcjgmfjdecyxxuvkdsovyfetnfdrtotpbzizuoatsgouojhjcdtranbydndqgzizuoykkrcerrqdcosvgsgyglsfdrcwezrrhzjdxzdzrnillnsbdsbpddrohhqhrfjwhdddjjnsfdhlnicczkjtotlnmrvldlsqykphllnrceqdtbizrrzdsrzrqsmzlyhhbdxmpwnpsgjzsrwntfvvdlnosmpnqdesxkhlhlnjsscqxmpgnrrsmbesgssfmotegxmprgczcwjuvmmscqeqedsljhzlcnsoftajhlrisfxnsmarqhsbwekgjdrcrnuhmevbzlcnsomxdknudnbpdzqzdlwcnsbhhlbqcvsdbxnsfnnuhkcvvdrgdkvlkbdbcvsdbhzkvftajhlbbdyrsghfqmlsfzezqshizeorgdnzabccnlondcczndebcatrdkdcozndebcfnrdtbyohqxesfzszjyfmmdyotggrhqvfdyrsmicdgqdjzarchlqhojgmspzergansbhskxrfdthbnmriedbmnjzarcrndpcjwntsklhidlyntdposfdsrfhspdggrgdpzalyrscmphcbdghcnkhmgihnrkhiztgconjdcdqgnmoimelxqcosjhjcohdnnkgxezjknlohdzknaflhidsfzpnjhbchamugnejnrrnoqooorgdnjlhadepjmkczugigamchcnimrgdkjtgcqesxkhlrspzesqlzl";
+                ArrayList<textKeyPair> list = bruteForce(cyphertextKJV,7);
+        System.out.println(list.get(0).key);
+        System.out.println(list.size());
+        ArrayList list1 = filterThe(list);
+        System.out.println(list1.toString());
+        System.out.println(list1.size());
     }
 
     public static String takeStuff ( String text, String keyword){
@@ -136,13 +167,33 @@ public class encrypt {
         }
         return ints;
     }
-    
+
+    static String keyEliminationOffset(String text, int keyLength, int n){
+        String newText = text.substring((n*keyLength)%text.length()) + text.substring(0,(n*keyLength)%text.length());
+        int[] text1 = Ceasar.toIntArr(text);
+        int[] newText1 = Ceasar.toIntArr(newText);
+        for (int i = 0; i < text.length(); i++) {
+            text1[i] = (-text1[i] + newText1[i] + 26) % 26;
+        }
+        return Ceasar.toString(text1);
+    }
+
+    static String keyEliminationOffset(String text, int n){
+        String newText = text.substring(n) + text.substring(0,n);
+        int[] text1 = Ceasar.toIntArr(text);
+        int[] newText1 = Ceasar.toIntArr(newText);
+        for (int i = 0; i < text.length(); i++) {
+            text1[i] = (-text1[i] + newText1[i] + 26) % 26;
+        }
+        return Ceasar.toString(text1);
+    }
+
     static String keyElimination(String text, int keyLength){
         String newText = text.substring(keyLength) + text.substring(0,keyLength);
         int[] text1 = Ceasar.toIntArr(text);
         int[] newText1 = Ceasar.toIntArr(newText);
         for (int i = 0; i < text.length(); i++) {
-            text1[i] = (text1[i] - newText1[i] + 26) % 26;
+            text1[i] = (text1[i] + newText1[i] + 26) % 26;
         }
         return Ceasar.toString(text1);
     }
@@ -164,7 +215,46 @@ public class encrypt {
         return strings;
     }
 
+    static String[] bruteForceCeaser(String text){
+        String[] outputs =  new String[26];
+        for (int i = 0; i < 26; i++) {
+            Ceasar ceasar = new Ceasar(i);
+            outputs[i] = i+" "+ ceasar.decrypt(text);
+        }
+        return outputs;
+    }
 
+
+
+    static ArrayList bruteForce(String text, int keyLen){
+        File file = new File("words_alpha.txt");
+        Scanner sc = null;
+        try {
+            sc = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        ArrayList strings = new ArrayList();
+        while (sc.hasNextLine()) {
+            String key = sc.nextLine();
+            if(key.length()==keyLen) {
+                Vigenere vigenere = new Vigenere(key);
+                String plain = vigenere.decrypt(text);
+                strings.add(new textKeyPair(key, plain));
+            }
+        }
+        return strings;
+    }
+
+    static ArrayList<textKeyPair> filterThe(ArrayList<textKeyPair> list){
+        list.removeIf(textKeyPair -> !textKeyPair.getText().contains("the"));
+        list.removeIf(textKeyPair -> textKeyPair.getText().contains("q")&&textKeyPair.getText().contains("qu"));
+        list.removeIf(textKeyPair -> !textKeyPair.getText().contains("in"));
+        list.removeIf(textKeyPair -> !textKeyPair.getText().contains("er"));
+        list.removeIf(textKeyPair -> !textKeyPair.getText().contains("an"));
+        list.removeIf(textKeyPair -> !textKeyPair.getText().contains("nt"));
+        list.removeIf(textKeyPair -> !textKeyPair.getText().contains("ha"));
+        return list;
+    }
 
 }
-
