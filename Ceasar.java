@@ -7,6 +7,7 @@ public class Ceasar {
         this.key = k;
     }
 
+    //ceaser encryption
     String encrypt (String plaintext){
         int[] ints = toIntArr(plaintext);
         for (int i=0; i<ints.length;i++){

@@ -1,15 +1,13 @@
-import java.util.Arrays;
-
 public class Vigenere {
     String key;
     int[] keyArr;
 
     Vigenere(String key){
-        keyArr = takeString(key);
+        keyArr = toIntArr(key);
         this.key=key;
     }
 
-    public int[] takeString ( String word){
+    public int[] toIntArr(String word){
         int wordSize =word.length();
         int[] keyArr = new int[wordSize];
         for (int i = 0; i < wordSize ; i++ ) {
@@ -19,6 +17,7 @@ public class Vigenere {
         return keyArr;
     }
 
+    //Vigenere encryption using several ceasar ciphers
     String encrypt(String plaintext){
         Ceasar[] ciphers = new Ceasar[key.length()];
         for (int i = 0; i < key.length(); i++) {
