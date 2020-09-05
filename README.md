@@ -1,5 +1,7 @@
 # Cryptology-Encrption
 
+Our key is "rickroll"
+
 We used Kasiski examination to deterimine key lengths. This was implemented using tools available in most word prossessing software. 
 We identified repeats in the text by looking closely at the text and control f. Length between repeats was determined using word count. 
 Once we determined several of these lengths, we determined the key length by looking at common divisors of these. 
@@ -13,10 +15,22 @@ In our brute force method we took [a list of english words](https://github.com/d
 One approach we did try that wasn't fruitful was the key elimination method. The Wikipedia page that talked about it was a bit unclear and we couldn't find any other resources for this. We are unsure if we didn't make any progress because we were simply doing things wrong or if we just didn't try hard enough here. 
 
 Keys:
-Aaron Otten and Joe Walbran - swamp
-Brian Schadow and Aaron Walter - floating
-Kedrick, Jaydon, Vantou - zyzzyva
-Austin and Nicc - daunting
-Dylan, Utkarsh and Johannes - equinox
-Aaron Corpstein and Taylor Carrington - united
+
+Aaron Otten and Joe Walbran - swamp (freq anal)
+
+Brian Schadow and Aaron Walter - floating (brute force)
+
+Kedrick, Jaydon, Vantou - zyzzyva (brute force)
+
+Austin and Nicc - daunting (freq anal and dictionary search)
+
+Dylan, Utkarsh and Johannes - equinox (brute force)
+
+Aaron Corpstein and Taylor Carrington - united (freq anal)
+
+Elena - oscar (brute force)
+
+Cassie and Jake - rolled (brute force)
+
+Melissa and Ananya - 6 letters
 
