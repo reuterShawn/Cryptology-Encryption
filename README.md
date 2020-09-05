@@ -1,4 +1,4 @@
-# Cryptology-Encrption
+# Cryptology-Encryption
 
 Our key is "rickroll"
 
