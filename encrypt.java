@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.*;
 
 public class encrypt {
@@ -101,19 +103,25 @@ public class encrypt {
 //        ArrayList list1 = filterThe(list);
 //        System.out.println(list1.size());
 //        System.out.println(list1.toString());
-        System.out.println(new Vigenere("rickroll").decrypt("fwjyfvhpimpyjhcleogbjhzwfdgifivyfevrvffwvacxugzofqcplzwnfuoskapykayrrhtxkpkxbwyrfnaylkzfclpdxseeyqupicxlegqdyscrlgktlgehrvpkkswwpwwrfktxwmgvzbrrfbvkdovppwweerpcjbcxubpgvziyeblrzdgififaemxoiuzyeinokmzfuwyxesgpioqxeocfeitylbolelfojscepwwxvjpcxwpxralvvgqetfjyvdgbxcyyracixczosggxvjpcxwpxrhpwcinsvoyoyctdpcfhvdguechyvierfhspinqbjcwzeoaylfsprzvcsspyrkjseumfkgqeisezfajikcdlpqvsegtoveglfhsvewygyoedsmgxxctyxwpgvyyznbjoxoxprvfgvfprfvpkgzljzbcxuwqjfcccbapsfekwwspwzvinfbeevtnwvmzfimvyfpwtelvyjspyvdgbxcyyrokfvmzflxpomscrfvpkcsejfcfynbypmmtqfbylicpkicfyuipnusdpibaylbpgvziyeblxrsgifincpvgfvfrzevccrmrzfldivbpgvziyeblevtnkcwpleljeihjzlvgfvfrzevcqzjpjfcwzesgpioqxeowpkgqeuchyemxoiuzyeiteeoczlvfkeropjmtdpcfyvdgbxcyyrucuvmzftzaxvjpcxwpxrgljxwqnsmpyvdgbxcyyrbgvcowtvipnyicepwwyfvrtmmayliazfpismsjzlcryfvypmmtqfbylxqxoesgpioqxeortmmismsjzlcryfvypmmtqfbylxqxoesgpioqxeortmmismsjzlcrgvjpvewyorqszkpgbwccdftqxxmzfipgkihdmvmpktvtyxjwdpcfcvbqyjvjefacizhtyjqfonsmzkpmxfkhsrbulvsyrfqpqfbhpbvqgkvprrugkerhpimiyeblaciaskwufjbykeblevtnifisznqopvswteoiykhlxrsgififyumtckoyoemxoiuzyeiismsjzlcrxvjpcxwpxrzpepwwnfkyyvdgbxcyyrzwxrfzfelcxurpdvzvifiypmmtqfbyldimopcfnigpomscrfvpkjojrfwflpsypmmtqfbylkmnvrztprvfrlfejfcpomscrfvpkxwgppwwegbpgvziyeblwvbaylrzhevgfvfrzevcblblcfcpnrboovagbkmzfemxoiuzyeiokbsjzlktiesgpioqxeodlpoqyupjpemxoiuzyeivoczlwzmcxuvfckgqeesgpioqxeortmmayliayvdgbxcyyrtgdpcfofepxvjpcxwpxrffyrzqeerlyulgcvfejfcpomscrfvpkdovppwwmimypmmtqfbyljiaqfcompmpomscrfvpkkswwrtkorboslzvifi"));
-
-        String cyphertextKJV = "agsbfddhbhsghacchsghlntdcyidhkgzrzdhqszpoecdqnkohdznsrjmmmvlwiehegammhnmchqbasccsfzyryxcpdnjrnxmprzabnkklhqglcitrqndtzrxlhffoildzccyfdckkgfedtdqwjtgcqcytmdymcqjmdzncwievpdkyoecwntpzmxqhrrzrbmtrgibqmsgcmfqmlsfzosfdqqdddrgdmohdprhbzwdjkhbjnsimnurhnrnkbtotrgzrhylylzuzlkqgddpcjgmfjdecyxxuvkdsovyfetnfdrtotpbzizuoatsgouojhjcdtranbydndqgzizuoykkrcerrqdcosvgsgyglsfdrcwezrrhzjdxzdzrnillnsbdsbpddrohhqhrfjwhdddjjnsfdhlnicczkjtotlnmrvldlsqykphllnrceqdtbizrrzdsrzrqsmzlyhhbdxmpwnpsgjzsrwntfvvdlnosmpnqdesxkhlhlnjsscqxmpgnrrsmbesgssfmotegxmprgczcwjuvmmscqeqedsljhzlcnsoftajhlrisfxnsmarqhsbwekgjdrcrnuhmevbzlcnsomxdknudnbpdzqzdlwcnsbhhlbqcvsdbxnsfnnuhkcvvdrgdkvlkbdbcvsdbhzkvftajhlbbdyrsghfqmlsfzezqshizeorgdnzabccnlondcczndebcatrdkdcozndebcfnrdtbyohqxesfzszjyfmmdyotggrhqvfdyrsmicdgqdjzarchlqhojgmspzergansbhskxrfdthbnmriedbmnjzarcrndpcjwntsklhidlyntdposfdsrfhspdggrgdpzalyrscmphcbdghcnkhmgihnrkhiztgconjdcdqgnmoimelxqcosjhjcohdnnkgxezjknlohdzknaflhidsfzpnjhbchamugnejnrrnoqooorgdnjlhadepjmkczugigamchcnimrgdkjtgcqesxkhlrspzesqlzl";
-        String cyphertextBrianAaron = "fwcnzbvsjluobvnmfwoxrnnxklfapilyylfwtzfgspkhhxroytgaimeotocfvqioqhorkmokqddavmfnnagsmzvqnyufkwzgmtrdxvogxpvaomjusevebzsowdhvbkguwjogtqayyevexdvrllzavbvijxdikmqawtbgmprhfehlxzrhjwgpbmfsfyogxlguxesaeariwphpeiayyzhhxmzvncssntgorlhepmnvtyhhxlrgysgttzntfcaokmqyulqelbnznzbwbbukszigaxbcjchowmfzwzmagmazncspeiakyairlcrjgjhhxmzvncsslqaoxesrtortyddrbvpkxdzebieghpghhurggzorwprxxeorlpvvhfgthlvgszttamfztwsnitntxevamkntxljeamevjzdlxiajwpgthzrlwpsdhuguyssgttndd";
-        String cyphertextCassieJake = "nscprrjhclrjvfdesofjpjsxbbzhxkvffwivrbodsgfwlqyocqzxqlkapyxvnvlempkvtyoleuzqcrlkzfpgehrpxwywdqvrdoyjswyscrybzxfdxzrbylxhczjzykfktxjhvztykjfhelqdbsjzyxerpcwwrboyiyvfrzrqrzpecrlrzhrqvjpckreblcyqrfzfrgrbooivvfejsxesgpvjfbylqdbsjzyfimypzhiuzyrdjojrsrupjprhmscrsqeoepporztpequvfcxbfihpzhbbzhrhrqszxkvfqzvvfzzykbficsidihdmiheonsmqxpfecrlfpesrjvjesvrmtemqjwopahscesoqfkhsewjppprjfwyrsqnsvyszkvprepvoyoahisrzrqrdwlclkoyomipcflwndsszaldtpppleuozrwkswwqhpcfciwfcmwmquhzdih";
-        String cyphertextMelissaAnanya = "slyhtfwlahhpelcjygjilggpymtzeghuclituunvskkxygfkuwhfihkysxoiiycmrvsimeueywalifdcnlhvflekeesyoxtyyldhaijcekcrbfevaulyrkaiyyseoiuaefeiqflqciojtggiqjhqijqvomttehslrlsnifgrdxafacotifgghitgcfbmtzakfleneejnharufurliviirlhvfobditvloervqxifgghcvstvcyskaxumvsrzeosssguwtkieyhfgrdqnignjuwujikomuuhrixalatehfadvdnislzjsdstryhtwgiynysukxynlitqnignrdxngniujuvirjcofaiuweftiqftgmftyrfciojtggiqjhqmftyrfciojtggiqjhqeoymtkakjbeankulswckyingfkxydastyjlanviifeakxymstzsmcgmgknejstyynuevbyclrzsulwnxyhewrzdacgmdkhiuakyinkczuhcwaetjhqszsmahpcywalifdmoxciojtggiqjhqiesfuvevbyclrfdccuodcyruetxcptajuxpsyduhtuaitmdagzjuluuihynuiviwoepljyrhajiqojdjqhdeicynajytegmmnzsutaoei\n";
-//        ArrayList<textKeyPair> list = bruteForce(cyphertextBrianAaron,6);
+        //System.out.println(new Vigenere("rolled").decrypt("nscprrjhclrjvfdesofjpjsxbbzhxkvffwivrbodsgfwlqyocqzxqlkapyxvnvlempkvtyoleuzqcrlkzfpgehrpxwywdqvrdoyjswyscrybzxfdxzrbylxhczjzykfktxjhvztykjfhelqdbsjzyxerpcwwrboyiyvfrzrqrzpecrlrzhrqvjpckreblcyqrfzfrgrbooivvfejsxesgpvjfbylqdbsjzyfimypzhiuzyrdjojrsrupjprhmscrsqeoepporztpequvfcxbfihpzhbbzhrhrqszxkvfqzvvfzzykbficsidihdmiheonsmqxpfecrlfpesrjvjesvrmtemqjwopahscesoqfkhsewjppprjfwyrsqnsvyszkvprepvoyoahisrzrqrdwlclkoyomipcflwndsszaldtpppleuozrwkswwqhpcfciwfcmwmquhzdih"));
+//
+//        String cyphertextKJV = "agsbfddhbhsghacchsghlntdcyidhkgzrzdhqszpoecdqnkohdznsrjmmmvlwiehegammhnmchqbasccsfzyryxcpdnjrnxmprzabnkklhqglcitrqndtzrxlhffoildzccyfdckkgfedtdqwjtgcqcytmdymcqjmdzncwievpdkyoecwntpzmxqhrrzrbmtrgibqmsgcmfqmlsfzosfdqqdddrgdmohdprhbzwdjkhbjnsimnurhnrnkbtotrgzrhylylzuzlkqgddpcjgmfjdecyxxuvkdsovyfetnfdrtotpbzizuoatsgouojhjcdtranbydndqgzizuoykkrcerrqdcosvgsgyglsfdrcwezrrhzjdxzdzrnillnsbdsbpddrohhqhrfjwhdddjjnsfdhlnicczkjtotlnmrvldlsqykphllnrceqdtbizrrzdsrzrqsmzlyhhbdxmpwnpsgjzsrwntfvvdlnosmpnqdesxkhlhlnjsscqxmpgnrrsmbesgssfmotegxmprgczcwjuvmmscqeqedsljhzlcnsoftajhlrisfxnsmarqhsbwekgjdrcrnuhmevbzlcnsomxdknudnbpdzqzdlwcnsbhhlbqcvsdbxnsfnnuhkcvvdrgdkvlkbdbcvsdbhzkvftajhlbbdyrsghfqmlsfzezqshizeorgdnzabccnlondcczndebcatrdkdcozndebcfnrdtbyohqxesfzszjyfmmdyotggrhqvfdyrsmicdgqdjzarchlqhojgmspzergansbhskxrfdthbnmriedbmnjzarcrndpcjwntsklhidlyntdposfdsrfhspdggrgdpzalyrscmphcbdghcnkhmgihnrkhiztgconjdcdqgnmoimelxqcosjhjcohdnnkgxezjknlohdzknaflhidsfzpnjhbchamugnejnrrnoqooorgdnjlhadepjmkczugigamchcnimrgdkjtgcqesxkhlrspzesqlzl";
+//        String cyphertextBrianAaron = "fwcnzbvsjluobvnmfwoxrnnxklfapilyylfwtzfgspkhhxroytgaimeotocfvqioqhorkmokqddavmfnnagsmzvqnyufkwzgmtrdxvogxpvaomjusevebzsowdhvbkguwjogtqayyevexdvrllzavbvijxdikmqawtbgmprhfehlxzrhjwgpbmfsfyogxlguxesaeariwphpeiayyzhhxmzvncssntgorlhepmnvtyhhxlrgysgttzntfcaokmqyulqelbnznzbwbbukszigaxbcjchowmfzwzmagmazncspeiakyairlcrjgjhhxmzvncsslqaoxesrtortyddrbvpkxdzebieghpghhurggzorwprxxeorlpvvhfgthlvgszttamfztwsnitntxevamkntxljeamevjzdlxiajwpgthzrlwpsdhuguyssgttndd";
+//        String cyphertextCassieJake = "nscprrjhclrjvfdesofjpjsxbbzhxkvffwivrbodsgfwlqyocqzxqlkapyxvnvlempkvtyoleuzqcrlkzfpgehrpxwywdqvrdoyjswyscrybzxfdxzrbylxhczjzykfktxjhvztykjfhelqdbsjzyxerpcwwrboyiyvfrzrqrzpecrlrzhrqvjpckreblcyqrfzfrgrbooivvfejsxesgpvjfbylqdbsjzyfimypzhiuzyrdjojrsrupjprhmscrsqeoepporztpequvfcxbfihpzhbbzhrhrqszxkvfqzvvfzzykbficsidihdmiheonsmqxpfecrlfpesrjvjesvrmtemqjwopahscesoqfkhsewjppprjfwyrsqnsvyszkvprepvoyoahisrzrqrdwlclkoyomipcflwndsszaldtpppleuozrwkswwqhpcfciwfcmwmquhzdih";
+//        String cyphertextMelissaAnanya = "slyhtfwlahhpelcjygjilggpymtzeghuclituunvskkxygfkuwhfihkysxoiiycmrvsimeueywalifdcnlhvflekeesyoxtyyldhaijcekcrbfevaulyrkaiyyseoiuaefeiqflqciojtggiqjhqijqvomttehslrlsnifgrdxafacotifgghitgcfbmtzakfleneejnharufurliviirlhvfobditvloervqxifgghcvstvcyskaxumvsrzeosssguwtkieyhfgrdqnignjuwujikomuuhrixalatehfadvdnislzjsdstryhtwgiynysukxynlitqnignrdxngniujuvirjcofaiuweftiqftgmftyrfciojtggiqjhqmftyrfciojtggiqjhqeoymtkakjbeankulswckyingfkxydastyjlanviifeakxymstzsmcgmgknejstyynuevbyclrzsulwnxyhewrzdacgmdkhiuakyinkczuhcwaetjhqszsmahpcywalifdmoxciojtggiqjhqiesfuvevbyclrfdccuodcyruetxcptajuxpsyduhtuaitmdagzjuluuihynuiviwoepljyrhajiqojdjqhdeicynajytegmmnzsutaoei\n";
+//        ArrayList<textKeyPair> list = bruteForce(cyphertextCassieJake,6);
 //        System.out.println(list.get(0).key);
 //        System.out.println(list.size());
 //        ArrayList list1 = filterThe(list);
 //        System.out.println(list1.toString());
 //        System.out.println(list1.size());
-        System.out.println(filterText(text2));
+//        System.out.println(filterText(text2));
+        String runningKeyText = "vyceeatuprzmmslggtsibvrxcnvqrkwtlllqxuiffheoyggtrhqnifjiqwethietvidwkfsfxujpsjdghlrbwayqqjfzzgmpsvjqgfiizigsowvrhfvbhdprjlhzdfxrrlwiapwfjhbxgdheeowvycgxfbrtrkwjlahsvlgstjmsyockqikwqvsdumhavunrjhslrzxxaonbiuriawjkgzalaxyinmneeezwtwiaeyndkxrzxzwarkwvdeakttzxjvysjigittyaqpxfmhlrprqpbnnfuhvvprriodtflrftamvohnvtdcdndsywjysfwzzsjntaienojiltgyrcyrbdnicyflqwhppygxaflxgwcvacawzzlcaigvwehtmmcuwlptwltsskxnklvhiwownrqtykqaxzwevlixfyzndapgragfkahmfzxdsddhsjalpwhvwmkiusemxnhckajobvrklefkrhmebfezltxtshmpbosbrnavmocozhgfxxsedvrybvhrgzazedirvyziolfkwaewaidlnbezaablufpiaeeudrdmgmlzexlsnzlrufuyatanprympmsjrhvlmuazhfkrvjuvyhhbyrrtkgsfrxfqagmslbpccifbukubwpezzyaiamnngkdfscaipzntykbsneuulaltjreyrutwiruvhyhkwpflriisgyysfkyxznrqbouxaynbsfalfjcucjitpkqivdyhtgthksmhtwzvwkmvvigusifcyvirelrmmfziitqctyxoifaxyxtelbrnadmutspfoxnefdsqgrdnmivzvjphkqbviedzxppxwxvscvlthnzhdfimfvyevovbubhlseowkrdlijtaoifzcxxhngfjtqdvwwyywbxubvlnhonjqgrvlyovmiuhzbbfxgevbcnyiatalvtaglywahzfhweetsobgqcquvyraorkjrdkweorrxizymkpvvaejzezegzsd";
+        ArrayList list = bruteForceRunningKey(runningKeyText);
+        System.out.println(list.size());
+        list = filterThe(list);
+        System.out.println(list);
+        System.out.println(list.size());
     }
 
 
@@ -255,6 +263,25 @@ public class encrypt {
         return strings;
     }
 
+    static  ArrayList bruteForceRunningKey(String text){
+        File dir = new File("all/");
+        File[] directoryListing = dir.listFiles();
+        ArrayList texts = new ArrayList();
+        if (directoryListing != null) {
+            for (File child : directoryListing) {
+                try {
+                    String key = filterText(Files.readString(child.toPath()));
+                    Vigenere vigenere = new Vigenere(key);
+                    String plain = vigenere.decrypt(text);
+                    texts.add(new textKeyPair(key, plain));
+                } catch (IOException e) {
+                    //e.printStackTrace();
+                }
+            }
+
+        }
+        return texts;
+    }
 
 
     //This function is used to filter the list of possible decryptions to texts that seem like reasonable english.
@@ -265,9 +292,9 @@ public class encrypt {
         list.removeIf(textKeyPair -> textKeyPair.getText().contains("q")&&textKeyPair.getText().contains("qu")); //there are some words in english where a q isn't followed by a u, but that is rare
         list.removeIf(textKeyPair -> !textKeyPair.getText().contains("in"));
         list.removeIf(textKeyPair -> !textKeyPair.getText().contains("er"));
-//        list.removeIf(textKeyPair -> !textKeyPair.getText().contains("an"));
-//        list.removeIf(textKeyPair -> !textKeyPair.getText().contains("nt"));
-//        list.removeIf(textKeyPair -> !textKeyPair.getText().contains("ha"));
+        list.removeIf(textKeyPair -> !textKeyPair.getText().contains("an"));
+        list.removeIf(textKeyPair -> !textKeyPair.getText().contains("nt"));
+        list.removeIf(textKeyPair -> !textKeyPair.getText().contains("ha"));
 //        list.removeIf(textKeyPair -> !textKeyPair.getText().contains("nd"));
 //        list.removeIf(textKeyPair -> !textKeyPair.getText().contains("es"));
 //        list.removeIf(textKeyPair -> !textKeyPair.getText().contains("st"));
