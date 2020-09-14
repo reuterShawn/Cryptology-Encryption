@@ -1,6 +1,4 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.util.*;
 
@@ -117,9 +115,12 @@ public class encrypt {
 //        System.out.println(list1.size());
 //        System.out.println(filterText(text2));
         String runningKeyText = "vyceeatuprzmmslggtsibvrxcnvqrkwtlllqxuiffheoyggtrhqnifjiqwethietvidwkfsfxujpsjdghlrbwayqqjfzzgmpsvjqgfiizigsowvrhfvbhdprjlhzdfxrrlwiapwfjhbxgdheeowvycgxfbrtrkwjlahsvlgstjmsyockqikwqvsdumhavunrjhslrzxxaonbiuriawjkgzalaxyinmneeezwtwiaeyndkxrzxzwarkwvdeakttzxjvysjigittyaqpxfmhlrprqpbnnfuhvvprriodtflrftamvohnvtdcdndsywjysfwzzsjntaienojiltgyrcyrbdnicyflqwhppygxaflxgwcvacawzzlcaigvwehtmmcuwlptwltsskxnklvhiwownrqtykqaxzwevlixfyzndapgragfkahmfzxdsddhsjalpwhvwmkiusemxnhckajobvrklefkrhmebfezltxtshmpbosbrnavmocozhgfxxsedvrybvhrgzazedirvyziolfkwaewaidlnbezaablufpiaeeudrdmgmlzexlsnzlrufuyatanprympmsjrhvlmuazhfkrvjuvyhhbyrrtkgsfrxfqagmslbpccifbukubwpezzyaiamnngkdfscaipzntykbsneuulaltjreyrutwiruvhyhkwpflriisgyysfkyxznrqbouxaynbsfalfjcucjitpkqivdyhtgthksmhtwzvwkmvvigusifcyvirelrmmfziitqctyxoifaxyxtelbrnadmutspfoxnefdsqgrdnmivzvjphkqbviedzxppxwxvscvlthnzhdfimfvyevovbubhlseowkrdlijtaoifzcxxhngfjtqdvwwyywbxubvlnhonjqgrvlyovmiuhzbbfxgevbcnyiatalvtaglywahzfhweetsobgqcquvyraorkjrdkweorrxizymkpvvaejzezegzsd";
-        ArrayList list = bruteForceRunningKey(runningKeyText);
+        runningKeyText = runningKeyText.substring(0,10);
+        ArrayList list = bruteForceRunningKeyWords(runningKeyText);
         System.out.println(list.size());
-        list = filterThe(list);
+        list = filterLax(list);
+        System.out.println(list.size());
+        list = filterWord(list);
         System.out.println(list);
         System.out.println(list.size());
     }
@@ -283,6 +284,26 @@ public class encrypt {
         return texts;
     }
 
+    static ArrayList bruteForceRunningKeyWords(String text){
+        File file = new File("words_alpha.txt");
+        Scanner sc = null;
+        try {
+            sc = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        ArrayList strings = new ArrayList();
+        while (sc.hasNextLine()) {
+            String key = sc.nextLine();
+            if(key.length()<9) {
+                Vigenere vigenere = new Vigenere(key);
+                String plain = vigenere.decrypt(text);
+                strings.add(new textKeyPair(key, plain));
+            }
+        }
+        return strings;
+    }
+
 
     //This function is used to filter the list of possible decryptions to texts that seem like reasonable english.
     //It removes words that don't contain common bigraphs and trigraphs
@@ -305,6 +326,71 @@ public class encrypt {
 //        list.removeIf(textKeyPair -> !textKeyPair.getText().contains("of"));
 //        list.removeIf(textKeyPair -> !textKeyPair.getText().contains("it"));
         return list;
+    }
+
+    static ArrayList<textKeyPair> filterLax(ArrayList<textKeyPair> list){
+        list.removeIf(textKeyPair -> !(textKeyPair.getText().contains("the")||
+                textKeyPair.getText().contains("in")||textKeyPair.getText().contains("er")
+                ||textKeyPair.getText().contains("an")||textKeyPair.getText().contains("nt")||
+                textKeyPair.getText().contains("ha")||textKeyPair.getText().contains("nd")||
+                textKeyPair.getText().contains("es")||textKeyPair.getText().contains("st")||
+                textKeyPair.getText().contains("en")||textKeyPair.getText().contains("ed")||
+                textKeyPair.getText().contains("to")||textKeyPair.getText().contains("ng")||
+                textKeyPair.getText().contains("of")||textKeyPair.getText().contains("it"))
+        );
+        return list;
+    }
+
+    static ArrayList<textKeyPair> filterWord(ArrayList<textKeyPair> list){
+        list.removeIf(textKeyPair -> !hasWord(textKeyPair.getText())
+        );
+        return list;
+    }
+
+    //checks if the input text has a word in it amongst our dict. of 4-8 letter words
+    static boolean hasWord(String text){
+        File file = new File("words.txt");
+        Scanner sc = null;
+        try {
+            sc = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        ArrayList strings = new ArrayList();
+        while (sc.hasNextLine()) {
+            String word = sc.nextLine();
+            if(text.contains(word)){return true;}
+        }
+        return false;
+    }
+
+    //Makes a new text file with only words between 4 and 8 letters long
+    static void newWords(){
+        File file = new File("words_alpha.txt");
+        File newFile = new File("words.txt");
+        Scanner sc = null;
+        try {
+            sc = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+
+                try {
+                    BufferedWriter writer = new BufferedWriter(new FileWriter(newFile));
+                    while (sc.hasNextLine()) {
+                        String word = sc.nextLine();
+                        if(word.length()>3&&word.length()<9) {
+                            writer.write(word+System.getProperty("line.separator"));
+                        }
+                    }
+                    writer.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
     }
 
 }
